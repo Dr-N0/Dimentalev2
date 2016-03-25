@@ -6,19 +6,36 @@ Rails.application.routes.draw do
   root 'home_page#index'
 
   post '/next', to: 'home_page#next'
+  
   get '/no', to: 'home_page#no'
+ 
   get '/yes', to: 'home_page#yes'
-  post '/1', to: 'home_page#next'
-  post '/2', to: 'home_page#next'
-  post '/enter', to: 'home_page#enter'
-  post '/answer', to: 'home_page#answer'
-  get '/answer', to: 'home_page#answer'
-  get '/next', to: 'home_page#next'
-  get '/re', to: 'home_page#re'
+  
   post '/yes', to: 'home_page#yes'
+ 
   post '/no', to: 'home_page#no'
+ 
+  post '/enter', to: 'home_page#enter'
+ 
+  post '/answer', to: 'home_page#answer'
+ 
+  get '/answer', to: 'home_page#answer'
+  
+  get '/next', to: 'home_page#next'
+  
+  get '/re', to: 'home_page#re'
+ 
   get '/question', to: 'home_page#question'
+ 
   post '/question', to: 'home_page#question'
+ 
+  post '/1', to: 'home_page#one'
+ 
+  post '/2', to: 'home_page#two'
+ 
+  get '/1', to: 'home_page#next'
+  
+  get '/2', to: 'home_page#next'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

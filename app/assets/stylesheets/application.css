@@ -88,6 +88,7 @@ body{
 	width: 100px;
 	height: 75px;
 	font-size: 40px;
+	margin-top: 25px;
 }
 .two{
 	color: goldenrod;
@@ -96,6 +97,7 @@ body{
 	height: 75px;
 	font-size: 40px;
 	margin-left: 250px;
+	margin-top: 25px;
 }
 .yes_no{
 	margin-top: 25px;

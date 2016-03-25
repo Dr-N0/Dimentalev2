@@ -1,6 +1,6 @@
 class HomePageController < ApplicationController
 
-	$story = ["Welcome to Dimentale", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game type QUIT instead of hitting enter", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but i'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me"]
+	$story = ["Welcome to Dimentale", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game type QUIT instead of hitting enter", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but i'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "", "After that the robot disappears and you dont rly know what happened"]
 	$memory = $story[0]
 	$inventory = []
 	$yhealth = 10
@@ -9,19 +9,28 @@ class HomePageController < ApplicationController
 	$name = ""
 	$qmessage = ""
 	$qanswer = ""
+	$qcat = ""
+	$qdog = ""
 	def index
 
 
 	end
 
 	def next
+
 	$story.shift
-	if $story == []
-	$story = ["Welcome to Dimentale", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game type QUIT instead of hitting enter", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but i'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me"]
-	end
+		if $story == []
+			$story = ["Welcome to Dimentale", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game type QUIT instead of hitting enter", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but i'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "", "After that the robot disappears and you dont rly know what happened"]
+		end
 		$memory = $story[0]
-		if $qanswer
-			$qanswer = ""
+
+		if $memory == "After that the robot disappears and you dont rly know what happened"
+			$qcat = ""
+			$qdog = ""
+		end
+
+		if $memory == "Robot: This next question will determine if you live or die"
+				$qanswer = ""
 		end
 		redirect_to root_path
 	end
@@ -36,7 +45,7 @@ class HomePageController < ApplicationController
 		redirect_to({ action: 'next' })
 	end
 def re
-	$story = ["Welcome to Dimentale", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game type QUIT instead of hitting enter", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but i'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", "Robot: This next question will determine if you live or die", "The fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me"]
+	$story = ["Welcome to Dimentale", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game type QUIT instead of hitting enter", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but i'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die", "The fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "", "After that the robot disappears and you dont rly know what happened"]
 	$memory = $story[0]
 	$inventory = []
 	$yhealth = 10
@@ -45,6 +54,8 @@ def re
 	$name = ""
 	$qmessage = ""
 	$qanswer = ""
+	$qcat = ""
+	$qdog = ""
 	redirect_to root_path
 end
 
@@ -69,9 +80,22 @@ def answer
 		$qmessage = "Robot: Ok then, #{params[:no_yes]} it is"
 		$qanswer = "Robot: Ok then, #{params[:no_yes]} it is"
 	end
-	redirect_to({ action: 'index' })
+	redirect_to({ action: 'next' })
 end
 
+def one
+if $qcat == "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻"
+	$qdog = "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻"
+	redirect_to ({ action: 'next' })
+end
+end
+
+def two
+	if $qcat == "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻"
+	$qdog = "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻"
+	redirect_to ({ action: 'next' })
+end
+end 
 # def ok input
 # @next = gets.chomp
 # 	if @next.upcase == "QUIT"

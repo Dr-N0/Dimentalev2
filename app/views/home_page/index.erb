@@ -14,6 +14,13 @@
 		Picture
 	</p>
 </div>
+
+
+		<!-- VALIDATIONS FOR ASKING NON-NEXT QUESTIONS -->
+
+						<!-- BELOW -->
+
+
 <div class="mainbox" id="topqbox"> 
 	<%= $memory %>
 	<% if $boss == "valid"%>
@@ -25,16 +32,23 @@
 		<p><%="Robot: I don't like my name very much; would you like to keep the name Greg?"%></p>
 	<% end %>
 	<% if $qmessage == "Robot: What do you want it to be?"  %>
-		<% puts "it might work" %>
 		<%= $qmessage %>
 	<% elsif $qmessage == "Robot: What do you want it to be?" %>
-		<% puts "we did it"%>
 		<%= $qmessage %>
 	<% end %>
 	<%if $qanswer %>
 		<%= $qanswer %>
 	<% end %>
+	<% if $memory == "Robot: Which do you prefer, dogs or cats"%>
+		<% $qcat = "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻" %>
+	<% elsif $qdog == "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻" %>
+		<%= "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻" %>
+	<% end %>
 </div>
+
+
+		<!-- VALIDATIONS FOR NEXT BUTTONS -->
+					<!-- BELOW -->
 <div class="mainbox" id="botqbox">
 		<% if $memory == "Robot: What is your name?" %>
 				<%form_tag("/next", method: "post") do %>
@@ -48,11 +62,19 @@
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
+		<% elsif $memory == "Robot: Which do you prefer, dogs or cats" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
 		<%else%>
 			<%=form_tag("/next", method: "post") do %>
 				<%=submit_tag :Next, :class => "next"%>	
 			<% end %>	
 	<% end %>
+
+<!-- YES OR NO QUESTIONS VALIDATIONS -->
+			<!-- BELOW -->
+
 	<% if $boss == "valid" or $boss == "invalid" %>
 		<div class="yes_no">
 			<%= form_tag("/yes", method: "post") do %>
@@ -73,7 +95,11 @@
 				<%= text_field_tag :no_yes %>
 				<%=	submit_tag "Enter", class: "enter" %>
 			<% end %>
-		<% end %>	
+		<% end %>
+
+
+	<!-- VALIDATIONS FOR ONE OR TWO QUESTIONS -->
+				<!-- BELOW -->
 		<% if $memory == "Robot: Which do you prefer, dogs or cats" %>
 				<%= form_tag("/1", method: "post") do %>
 					<%=submit_tag :One, :class => "one"%>
