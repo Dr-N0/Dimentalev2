@@ -1,0 +1,156 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/*.class #ID's
+*/
+body{
+
+}
+#title{
+	margin-left: 33%; 
+	margin-right: 45%;
+	border: solid 3px red;
+	display: inline-block;
+}
+#halfbox{
+	width: 3000px;
+	height: 3000px;
+	max-height: 80vh;
+	max-width: 50%;
+	color: blue;
+	display: inline-block;
+	border: solid 2px;
+	word-wrap: break-word;
+	float: left;
+}
+#topqbox{
+	width: 3000px;
+	height: 3000px;
+	max-width: 49.4%;
+	max-height: 28.4vh;
+	float: right;
+	border: solid 2px blue;
+	display: inline-block;
+	word-wrap: break-word;
+}
+#botqbox{
+	width: 3000px;
+	height: 3000px;
+	max-width: 49.4%;
+	max-height: 51vh;
+	border: solid 2px blue;
+	display: inline-block;
+	word-wrap: break-word;
+	float: right;
+}
+.next{
+	color: goldenrod;
+	border: solid 4px black;
+	margin-left: 275px;
+	width: 100px;
+	height: 75px;
+	font-size: 40px;
+	margin-right: 90px;
+}
+.yes{
+	color: goldenrod;
+	border: solid 4px black;
+	margin-left: 100px;
+	width: 100px;
+	height: 75px;
+	font-size: 40px;
+}
+.no{
+	color: goldenrod;
+	border: solid 4px black;
+	width: 100px;
+	height: 75px;
+	font-size: 40px;
+	float: right;
+	margin-left: 250px;
+}
+.one{
+	color: goldenrod;
+	border: solid 4px black;
+	margin-left: 100px;
+	width: 100px;
+	height: 75px;
+	font-size: 40px;
+}
+.two{
+	color: goldenrod;
+	border: solid 4px black;
+	width: 100px;
+	height: 75px;
+	font-size: 40px;
+	margin-left: 250px;
+}
+.yes_no{
+	margin-top: 25px;
+	display: inline-flex;
+}
+form{
+	display: inline-block;
+}
+.name_text{
+	margin-left: 133px;
+	width: 375px;
+	height: 75px;
+	margin-top: 25px;
+	display: inline-block;
+}
+#empty_empty{
+	width: 375px;
+	height: 75px;
+	border: solid 4px black;
+	font-size: 60px;
+	display: inline-block;
+	margin-top: 25px;
+	margin-left: 133px;
+}
+.enter{
+	display: inline-block;
+	color: blue;
+	border: solid 3px black;
+	width: 125px;
+	height: 75px;
+	font-size: 40px;
+	margin-left: 255px;
+	margin-top: 4px;
+}
+.re{
+	display: inline-block;
+	border: solid 3px black;
+	width: 125px;
+	height: 75px;
+	font-size: 40px;
+}
+#no_yes{
+	width: 375px;
+	height: 75px;
+	border: solid 4px black;
+	font-size: 60px;
+	display: inline-block;
+	margin-top: 25px;
+	margin-left: 133px;
+}
+
+
+
+
+
+
+
+

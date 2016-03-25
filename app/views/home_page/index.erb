@@ -1,0 +1,93 @@
+<!-- <h1 class="classname"></h1> -->
+<div class= "re" id="re">
+<%= form_tag("/re", method: "get") do %>
+		<%= submit_tag :Reset, :class => "re"%>
+<% end %>
+</div>
+<div class= "mainbox" id="title">
+	<h1>
+		Dimentale
+	</h1>
+</div>
+<div class="mainbox" id="halfbox">
+	<p>
+		Picture
+	</p>
+</div>
+<div class="mainbox" id="topqbox"> 
+	<%= $memory %>
+	<% if $boss == "valid"%>
+		<p><%= "Robot: Password accepted dabaws is here" %></p>
+		<p><%= "Robot: I don't like my name very much; would you like to keep the name Greg?" %></p>
+	<% elsif $boss == "invalid" %>
+		<p><%= "Robot: Nice to meet you #$name" %></p>
+		<p><%= "Robot: My name is Greg" %></p>
+		<p><%="Robot: I don't like my name very much; would you like to keep the name Greg?"%></p>
+	<% end %>
+	<% if $qmessage == "Robot: What do you want it to be?"  %>
+		<% puts "it might work" %>
+		<%= $qmessage %>
+	<% elsif $qmessage == "Robot: What do you want it to be?" %>
+		<% puts "we did it"%>
+		<%= $qmessage %>
+	<% end %>
+	<%if $qanswer %>
+		<%= $qanswer %>
+	<% end %>
+</div>
+<div class="mainbox" id="botqbox">
+		<% if $memory == "Robot: What is your name?" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $boss == "valid" or $boss == "invalid" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $qmessage == "Robot: What do you want it to be?" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<%else%>
+			<%=form_tag("/next", method: "post") do %>
+				<%=submit_tag :Next, :class => "next"%>	
+			<% end %>	
+	<% end %>
+	<% if $boss == "valid" or $boss == "invalid" %>
+		<div class="yes_no">
+			<%= form_tag("/yes", method: "post") do %>
+				<%=submit_tag :Yes, :class => "yes"%>
+			<% end %>
+			<%= form_tag("/no", method: "post") do %>
+				<%=submit_tag :No, :class => "no"%>
+			<% end %>
+		<% end %>
+		<% if $memory == "Robot: What is your name?" %>
+			<%= form_tag enter_path do %>
+				<%= text_field_tag :empty_empty %>
+				<%=	submit_tag "Enter", class: "enter" %>
+			<% end %>
+		<% end %>
+		<% if $qmessage == "Robot: What do you want it to be?" %>
+			<%= form_tag("/answer", method: "post") do %>
+				<%= text_field_tag :no_yes %>
+				<%=	submit_tag "Enter", class: "enter" %>
+			<% end %>
+		<% end %>	
+		<% if $memory == "Robot: Which do you prefer, dogs or cats" %>
+				<%= form_tag("/1", method: "post") do %>
+					<%=submit_tag :One, :class => "one"%>
+				<% end %>
+				<%= form_tag("/2", method: "post") do %>
+					<%=submit_tag :Two, :class => "two"%>
+				<% end %>
+		<% end %>
+	</div>
+</div>
+
+
+
+
+
+
+
