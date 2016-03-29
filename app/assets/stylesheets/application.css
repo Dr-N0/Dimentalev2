@@ -18,7 +18,7 @@
 body{
 
 }
-#title{
+/*#title{
 	margin-left: 33%; 
 	margin-right: 45%;
 	border: solid 3px red;
@@ -44,11 +44,54 @@ body{
 	border: solid 2px blue;
 	display: inline-block;
 	word-wrap: break-word;
+	font-size: 20px;
+	text-align: center;
 }
 #botqbox{
 	width: 3000px;
 	height: 3000px;
 	max-width: 49.4%;
+	max-height: 51vh;
+	border: solid 2px blue;
+	display: inline-block;
+	word-wrap: break-word;
+	float: right;
+}*/
+/*Bellow is for the tv screen!!*/
+#title{
+	margin-left: 32.4%; 
+	margin-right: 45%;
+	border: solid 3px red;
+	display: inline-block;
+}
+#halfbox{
+	width: 3000px;
+	height: 3000px;
+	max-height: 80vh;
+	max-width: 50%;
+	color: blue;
+	display: inline-block;
+	border: solid 2.98px;
+	word-wrap: break-word;
+	float: left;
+}
+#topqbox{
+	width: 3000px;
+	height: 3000px;
+	max-width: 49.35%;
+	max-height: 28.4vh;
+	float: right;
+	border: solid 2px blue;
+	display: inline-block;
+	word-wrap: break-word;
+	font-size: 20px;
+	text-align: center;
+}
+
+#botqbox{
+	width: 3000px;
+	height: 3000px;
+	max-width: 49.35%;
 	max-height: 51vh;
 	border: solid 2px blue;
 	display: inline-block;
@@ -148,10 +191,22 @@ form{
 	margin-top: 25px;
 	margin-left: 133px;
 }
-
-
-
-
+.playerhealth{
+	display: inline-block;
+	margin-bottom: 50%;
+}
+.foehealth{
+	display: inline-block;
+	margin-left: 10%; 
+	margin-bottom: 50%;
+}
+.bosstitle{
+	display: block;
+}
+.items{
+	display: block;
+	color: black;
+}
 
 
 

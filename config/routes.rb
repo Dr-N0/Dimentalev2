@@ -33,9 +33,6 @@ Rails.application.routes.draw do
  
   post '/2', to: 'home_page#two'
  
-  get '/1', to: 'home_page#next'
-  
-  get '/2', to: 'home_page#next'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

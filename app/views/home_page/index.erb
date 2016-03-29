@@ -10,9 +10,9 @@
 	</h1>
 </div>
 <div class="mainbox" id="halfbox">
-	<p>
-		Picture
-	</p>
+	<h2 class= "items">
+		Your Items: <%= $inventory %>
+	</h2>
 </div>
 
 
@@ -25,25 +25,55 @@
 	<%= $memory %>
 	<% if $boss == "valid"%>
 		<p><%= "Robot: Password accepted dabaws is here" %></p>
-		<p><%= "Robot: I don't like my name very much; would you like to keep the name Greg?" %></p>
+		<p><%= "Robot: I don't like my name very much; would you like to keep the name Greg?" %><p>
 	<% elsif $boss == "invalid" %>
 		<p><%= "Robot: Nice to meet you #$name" %></p>
 		<p><%= "Robot: My name is Greg" %></p>
-		<p><%="Robot: I don't like my name very much; would you like to keep the name Greg?"%></p>
+		<p><%="Robot: I don't like my name very much; would you like to keep the name Greg?"%><p>
 	<% end %>
 	<% if $qmessage == "Robot: What do you want it to be?"  %>
-		<%= $qmessage %>
-	<% elsif $qmessage == "Robot: What do you want it to be?" %>
 		<%= $qmessage %>
 	<% end %>
 	<%if $qanswer %>
 		<%= $qanswer %>
 	<% end %>
-	<% if $memory == "Robot: Which do you prefer, dogs or cats"%>
-		<% $qcat = "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻" %>
-	<% elsif $qdog == "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻" %>
-		<%= "Robot: Very well then (ﾉಠдಠ)ﾉ︵┻━┻" %>
+	<% if $memory == "    " %>
+		<%= "Robot: Very well then (つ▀¯▀)つ" %>
 	<% end %>
+	<% if $fingerqq == "How rude!" %>
+		<%= $fingerqq %>
+	<% elsif $fingerq == "Ok" %>
+		<%= $fingerq %>
+	<% end %>
+	<% if $memory == "       " %>
+		<h3 class= "bosstitle">
+			BOSS - YOUR LOVING GRANDMA
+		</h3>
+		<h5 class= "playerhealth">
+			Your health <%= $yhealth %>
+		</h5>
+		<h5 class= "foehealth">
+			Foe health <%= $ehealth %>
+		</h5>
+	<% end %>
+
+	 <% if $memory == "Grandma: So I hear you like" %>
+ 		<%= $acat %>
+ 		<%= $adog %>
+ 	<% end %>
+	<% if $memory == "      " and $acat == "Cats"%>
+		<p>
+			<%= "Your now on Grandmas good list, she 'lets' you pass"%>
+		</p>
+ 	<% end %>
+ 	<% if $memory == "      " and $adog == "Dogs"%>
+ 		<p>
+ 			<%= "Grandma doesn't like dogs so she gives you a DISAPPROVING LOOK"%>
+ 		</p>
+ 		<p>
+ 			<%= "So you do the only logical thing and punch her in her groin" %>
+ 		</p> 	
+ 	<% end %>
 </div>
 
 
@@ -63,6 +93,10 @@
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
 		<% elsif $memory == "Robot: Which do you prefer, dogs or cats" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $memory == "or Two flip them the finger" %>
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
@@ -101,6 +135,14 @@
 	<!-- VALIDATIONS FOR ONE OR TWO QUESTIONS -->
 				<!-- BELOW -->
 		<% if $memory == "Robot: Which do you prefer, dogs or cats" %>
+				<%= form_tag("/1", method: "post") do %>
+					<%=submit_tag :One, :class => "one"%>
+				<% end %>
+				<%= form_tag("/2", method: "post") do %>
+					<%=submit_tag :Two, :class => "two"%>
+				<% end %>
+		<% end %>
+		<% if $memory == "or Two flip them the finger" %>
 				<%= form_tag("/1", method: "post") do %>
 					<%=submit_tag :One, :class => "one"%>
 				<% end %>
