@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   get '/run', to: 'home_page#run'
 
   get 'home_page/1', to: 'home_page#rules'
+
+  get 'home_page/2', to: 'home_page#paper'
  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

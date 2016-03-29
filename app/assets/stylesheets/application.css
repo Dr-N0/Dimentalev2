@@ -114,6 +114,7 @@ body{
 	width: 100px;
 	height: 75px;
 	font-size: 40px;
+	margin-top: 25px;
 }
 .no{
 	color: goldenrod;
@@ -121,8 +122,8 @@ body{
 	width: 100px;
 	height: 75px;
 	font-size: 40px;
-	float: right;
 	margin-left: 250px;
+	margin-top: 25px;
 }
 .one{
 	color: goldenrod;

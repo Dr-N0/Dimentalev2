@@ -14,7 +14,6 @@
 
 <!-- Inv_links hash: you need a :title (the text that appears as a link) and a :url (where the link delivers the user to after it's been clicked). You need to add it as a hash, in this fashion: {:title => "YOUR_TITLE",:url => "YOUR_URL"}. Once it's been added, you need to add it to the inv_links array, and it will appear in your inventory as a link that fires whatever logic you have associated with that link. -->
 
-
 		<% $inv_links.map{|wl| link_to wl[:title], wl[:url]}.join(',') %>
 	Your Items:[
 		<% $inv_links.each do |wl| %>
@@ -22,37 +21,59 @@
 		<% end %>
 				]
 	</h2>
-<% if flash[:rules] %>
-	<div class="invalert">
+	<% if flash[:rules] %>
+		<div class="invalert">
 		<%= flash[:rules] %>
 		<br>
 		<br>
-<% end %>
-<% if flash[:rules1] %>
+	<% end %>
+	<% if flash[:rules1] %>
 		<%= flash[:rules1] %>
 		<br>
 		<br>
-<% end %>	
-<% if flash[:rules2] %>
+	<% end %>	
+	<% if flash[:rules2] %>
 		<%= flash[:rules2] %>
 		<br>
 		<br>
-<% end %>	
-<% if flash[:rules3] %>
+	<% end %>	
+	<% if flash[:rules3] %>
 		<%= flash[:rules3] %>
 		<br>
 		<br>
-<% end %>		
-<% if flash[:grun] %>
+	<% end %>		
+	<% if flash[:grun] %>
 		<%= flash[:grun] %>
 		<br>
 		<br>
-<% end %>	
-<% if flash[:grun1] %>
-		<%= flash[:grun1] %>
-		<br>
-		<br>
-<% end %>
+	<% end %>	
+	<% if flash[:grun1] %>
+			<%= flash[:grun1] %>
+			<br>
+			<br>
+	<% end %>
+	<!-- THIS IS FOR THE HAPPY PAPER? -->
+	<% if flash[:paper] %>
+		<div class="invalert">
+			<%= flash[:paper] %>
+			<br>
+			<br>
+	<% end %>
+	<% if flash[:paper1] %>
+			<%= flash[:paper1] %>
+			<br>
+			<br>
+	<% end %>	
+	<% if flash[:paper2] %>
+			<%= flash[:paper2] %>
+			<br>
+			<br>
+	<% end %>	
+	<% if flash[:paper3] %>
+			<%= flash[:paper3] %>
+			<br>
+			<br>
+	<% end %>		
 	</div>
 </div>
 
@@ -98,7 +119,7 @@
 		</h5>
 	<% end %>
 
-	 <% if $memory == "Grandma: So I hear you like" %>
+	 <% if $memory == "Grandma: So I hear you like " %>
  		<%= $acat %>
  		<%= $adog %>
  	<% end %>
@@ -133,7 +154,7 @@
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
-		<% elsif $memory == "Robot: Which do you prefer, dogs or cats" %>
+		<% elsif $memory == "Robot: Which do you like, 1)dogs or 2)cats" %>
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
@@ -146,6 +167,10 @@
 				<%=submit_tag :Next, :class => "next"%>
 				<% end %>
 		<% elsif $memory == "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $memory == "Do you take the paper?" %>
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
@@ -179,11 +204,18 @@
 				<%=	submit_tag "Enter", class: "enter" %>
 			<% end %>
 		<% end %>
-
+		<% if $memory == "Do you take the paper?" %>	
+				<%= form_tag("/yes", method: "post") do %>
+					<%=submit_tag :Yes, :class => "yes"%>
+				<% end %>
+				<%= form_tag("/no", method: "post") do %>
+					<%=submit_tag :No, :class => "no"%>
+				<% end %>
+		<% end %>
 
 	<!-- VALIDATIONS FOR ONE OR TWO QUESTIONS -->
 				<!-- BELOW -->
-		<% if $memory == "Robot: Which do you prefer, dogs or cats" %>
+		<% if $memory == "Robot: Which do you like, 1)dogs or 2)cats" %>
 				<%= form_tag("/1", method: "post") do %>
 					<%=submit_tag :One, :class => "one"%>
 				<% end %>
