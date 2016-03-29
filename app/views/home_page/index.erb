@@ -11,8 +11,49 @@
 </div>
 <div class="mainbox" id="halfbox">
 	<h2 class= "items">
-		Your Items: <%= $inventory %>
+
+<!-- Inv_links hash: you need a :title (the text that appears as a link) and a :url (where the link delivers the user to after it's been clicked). You need to add it as a hash, in this fashion: {:title => "YOUR_TITLE",:url => "YOUR_URL"}. Once it's been added, you need to add it to the inv_links array, and it will appear in your inventory as a link that fires whatever logic you have associated with that link. -->
+
+
+		<% $inv_links.map{|wl| link_to wl[:title], wl[:url]}.join(',') %>
+	Your Items:[
+		<% $inv_links.each do |wl| %>
+			<%= link_to(wl[:title], wl[:url]) %>
+		<% end %>
+				]
 	</h2>
+<% if flash[:rules] %>
+	<div class="invalert">
+		<%= flash[:rules] %>
+		<br>
+		<br>
+<% end %>
+<% if flash[:rules1] %>
+		<%= flash[:rules1] %>
+		<br>
+		<br>
+<% end %>	
+<% if flash[:rules2] %>
+		<%= flash[:rules2] %>
+		<br>
+		<br>
+<% end %>	
+<% if flash[:rules3] %>
+		<%= flash[:rules3] %>
+		<br>
+		<br>
+<% end %>		
+<% if flash[:grun] %>
+		<%= flash[:grun] %>
+		<br>
+		<br>
+<% end %>	
+<% if flash[:grun1] %>
+		<%= flash[:grun1] %>
+		<br>
+		<br>
+<% end %>
+	</div>
 </div>
 
 
@@ -71,7 +112,7 @@
  			<%= "Grandma doesn't like dogs so she gives you a DISAPPROVING LOOK"%>
  		</p>
  		<p>
- 			<%= "So you do the only logical thing and punch her in her groin" %>
+ 			<%= "So you do the only logical thing and punch her because she hindered your morals" %>
  		</p> 	
  	<% end %>
 </div>
@@ -97,6 +138,14 @@
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
 		<% elsif $memory == "or Two flip them the finger" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $memory == "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game" and flash[:rules] %>
+				<%=form_tag("/next", method: "post") do %>
+				<%=submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $memory == "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game" %>
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
@@ -148,6 +197,13 @@
 				<% end %>
 				<%= form_tag("/2", method: "post") do %>
 					<%=submit_tag :Two, :class => "two"%>
+				<% end %>
+		<% end %>
+		<!-- VALIDATIONS FOR ITEM BOX -->
+				<!-- BELOW -->
+		<% if $fight == true %>
+				<%= form_tag("/run", method: "get") do %>
+					<%=submit_tag :Run, :class => "item"%>
 				<% end %>
 		<% end %>
 	</div>

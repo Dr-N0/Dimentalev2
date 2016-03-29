@@ -207,7 +207,22 @@ form{
 	display: block;
 	color: black;
 }
-
-
+/*This is for the boss fights below*/
+.item{
+	display: inline-block;
+	color: blue;
+	border: solid 3px black;
+	width: 3000px;
+	height: 3000px;
+	font-size: 40px;
+	max-width: 10.5%;
+	max-height: 15vh;
+	margin-top: 150px; 
+}
+.invalert{
+	display: block;
+	color: red;
+	border: solid 3px red;
+}
 
 

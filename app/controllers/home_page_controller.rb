@@ -1,8 +1,13 @@
 class HomePageController < ApplicationController
 
-	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS", "BUT before we do that rules must be presented to you", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game LEAVE I don't want you anyway ", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like", "      "]
+
+# $FIGHT = THE RUN BUTTON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like", "      "]
 	$memory = $story[0]
-	$inventory = ""
+	$inventory = []
+	$inv_links = []
 	$yhealth = 10
 	$ehealth = 1
 	$boss = ""
@@ -15,6 +20,7 @@ class HomePageController < ApplicationController
 	$acat = ""
 	$fingerq = ""
 	$fingerqq = ""
+	$fight = false
 	def index
 
 
@@ -24,7 +30,7 @@ class HomePageController < ApplicationController
 
 	$story.shift
 		if $story == []
-			$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS", "BUT before we do that rules must be presented to you", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game LEAVE I don't want you anyway ", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One qflip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      "]
+			$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One qflip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      "]
 		end
 		$memory = $story[0]
 
@@ -32,7 +38,15 @@ class HomePageController < ApplicationController
 			$qcat = ""
 			$qdog = ""
 		end
-
+		if $memory == "      "
+			$fight = false
+		end
+		if $memory == "       "
+			$fight = true
+		end
+		if $memory == "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game"
+			$inv_links.push({:title => "YOUR VERY HELPFUL RULES",:url => "/home_page/1?id=1"})
+		end
 		if $memory == "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey"
 			$fingerq = ""
 			$fingerqq = ""
@@ -52,9 +66,10 @@ class HomePageController < ApplicationController
 		redirect_to({ action: 'next' })
 	end
 def re
-	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS", "BUT before we do that rules must be presented to you", "If your Health points or (hp) reaches 0 you die and restart", "If at any time you want to quit this awesome game LEAVE I don't want you anyway ", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die", "The fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like", "      "]
+	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die", "The fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you prefer, dogs or cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like", "      "]
 	$memory = $story[0]
-	$inventory = ""
+	$inventory = []
+	$inv_links = []
 	$yhealth = 10
 	$ehealth = 1
 	$boss = ""
@@ -67,6 +82,7 @@ def re
 	$acat = ""
 	$fingerq = ""
 	$fingerqq = ""
+	$fight = false
 	redirect_to root_path
 end
 
@@ -107,6 +123,23 @@ def two
 	end
 	redirect_to ({ action: 'next'})
 end
+def run
+	if $fight == true
+		flash[:grun] = "You can't run from grandma, who do you think you are?"
+		flash[:grun1] = "GRANDPA?"
+	end
+	redirect_to :back
+end
+def rules
+	flash[:rules] = "1)NO SMOKING"
+	flash[:rules1] = "2)NO FUN"
+	flash[:rules2] = "3)If your HP (health points) go to 0 you LOSE, try to make everyone happy or you going to have a bad time"
+	flash[:rules3] = "4)YOU CANT GO FURTHER UNLESS YOU ARE SMART ENOUGH TO SOLVE THIS PROBLEM (On the back)"
+	redirect_to :back
+end
+
+
+
 # def ok input
 # @next = gets.chomp
 # 	if @next.upcase == "QUIT"
