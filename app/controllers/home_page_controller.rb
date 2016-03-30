@@ -3,8 +3,7 @@ class HomePageController < ApplicationController
 
 # $FIGHT = THE RUN BUTTON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-
-	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and THE POWER OF FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you like, 1)dogs or 2)cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      ", "Grandma: Oh whats this?", "Grandma: you have some directions for some sort of game", "Ill take that off you", "After your encounter with Grandma you start walking away from your house", "After a few minutes of boring walking you come across a slip of paper", "Do you take the paper?"]
+	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and THE POWER OF FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Some period of time later", " You are 14 years of age", " You are rebellious and hate your parents even though deep down inside you know you love them", " You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you like, 1)dogs or 2)cats", "    ", "After that the robot disappears and you don't rly know what happened", "After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened", "2 years pass something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      ", "Grandma: Oh whats this?", "Grandma: you have some directions for some sort of game", "Ill take that off you", "After your encounter with Grandma you start walking away from your house", "After a few minutes of boring walking you come across a slip of paper", "Do you take the paper?", "When you got to the labratory there were two doors Indifferent lab door 1 and Ecstatic lab door 2", "          ",  "When you get into the room through either of the doors the scientists notice you and shake your hand", "They turn yours and the other 3 subjects attention to a masive square against", "It lights up blue", "As you are pushed forward to the portal you think", "Why am I so awesome?", "When you get to the portal you take the final steps to the new age you will be apart of", "The age of dementions"]
 	$memory = $story[0]
 	$inventory = []
 	$inv_links = []
@@ -22,6 +21,7 @@ class HomePageController < ApplicationController
 	$fingerqq = ""
 	$paperq = false
 	$fight = false
+	$labdoorq = ""
 	def index
 
 
@@ -30,9 +30,6 @@ class HomePageController < ApplicationController
 	def next
 
 	$story.shift
-		if $story == []
-			$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and THE POWER OF FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you like, 1)dogs or 2)cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One qflip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      ", "Grandma: Oh whats this?", "Grandma: you have some directions for some sort of game", "Ill take that off you", "After your encounter with Grandma you start walking away from your house", "After a few minutes of boring walking you come across a slip of paper", "Do you take the paper?"]
-		end
 		$memory = $story[0]
 
 		if $memory == "After that the robot disappears and you don't rly know what happened"
@@ -61,7 +58,11 @@ class HomePageController < ApplicationController
 		if $memory == "Ill take that off you"
 			$inv_links.shift
 		end
-		redirect_to root_path
+		if $story == []
+			redirect_to ({ action: 're' })
+		else
+			redirect_to root_path
+		end
 	end
 	def enter
 		if params[:empty_empty] == "Beckett"
@@ -73,7 +74,7 @@ class HomePageController < ApplicationController
 		redirect_to({ action: 'next' })
 	end
 def re
-	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and THE POWER OF FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Australian narrator: Ok just to be clear I was payed for the intro because $50 a word was waaaayyyy tooo muuuch for a newbie like my boss but I'm nice so I lowered it to $49 and a deal was set", "Australian narrator: so here I am doing this stupid voice over", "Some period of time later", "Australian narrator: Ok, lets get into your game", "Australian narrator: You are 14 years of age", "Australian narrator: You are rebellious and hate your parents even though deep down inside you know you love them", "Australian narrator: You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die", "The fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you like, 1)dogs or 2)cats", "    ", "After that the robot disappears and you don't rly know what happened", "Just sober Australian narrator: After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened just like me last night", "Just sober Australian narrator: 2 years pass and I am completely done with drinking something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "Sober Australian narrator: You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      ", "Grandma: Oh whats this?", "Grandma: you have some directions for some sort of game", "Ill take that off you", "After your encounter with Grandma you start walking away from your house", "After a few minutes of boring walking you come across a slip of paper", "Do you take the paper?"]
+	$story = ["Welcome to Dimentale", "I am your consciousness, I'll be leading you through your adventure, there will be joy and sadness but most of all you will learn to beat the crap out of people who stand in your way", "with WORDS and THE POWER OF FISTICUFFS", "Oh look at that, a piece of paper with conveniently perfect print and in great condition it has the rules for the game that your in you should read it in interest of not dying or slowing the pace of the game", "Some period of time later", " You are 14 years of age", " You are rebellious and hate your parents even though deep down inside you know you love them", " You go into your room after a heated fight about the constitutional rights of a strip of bacon when you see a robot sitting on YOUR chair in YOUR room so you decide to ask it to leave when it says", "Robot: What is your name?", "  ", " ", " ", "Robot: This next question will determine if you live or die, the fate of my life and almost certainly yours can be saved if you answer this question", "Robot: please can you tell me", "Robot: Which do you like, 1)dogs or 2)cats", "    ", "After that the robot disappears and you don't rly know what happened", "After the questioning of the mysterious robot that left after the final question you continue your day as if nothing happened", "2 years pass something inside calls for you. You don't know what but after those hard disgusting and gross years you decide to leave your home town", "You leave home, your loving mother, and all of your friends behind. you look back and", "One flip them the finger", "or Two flip them the finger", " ", "They respond with we love you too and you feel like a piece of crap BUT you embark on your journey", "Before you can leave your grandma blocks the way you decide to engage in fisticuffs", "WHEN SOMEONE BLOCKS YOUR PATH OR OBJECTIVE YOU AUTOMATICLY DECIDE TO FIGHT THEM", "       ", "Grandma: So I hear you like ", "      ", "Grandma: Oh whats this?", "Grandma: you have some directions for some sort of game", "Ill take that off you", "After your encounter with Grandma you start walking away from your house", "After a few minutes of boring walking you come across a slip of paper", "Do you take the paper?", "When you got to the labratory there were two doors Indifferent lab door 1 and Ecstatic lab door 2", "          ",  "When you get into the room through either of the doors the scientists notice you and shake your hand", "They turn yours and the other 3 subjects attention to a masive square against", "It lights up blue", "As you are pushed forward to the portal you think", "Why am I so awesome?", "When you get to the portal you take the final steps to the new age you will be apart of", "The age of dementions"]
 	$memory = $story[0]
 	$inventory = []
 	$inv_links = []
@@ -91,6 +92,7 @@ def re
 	$fingerqq = ""
 	$fight = false
 	$paperq = false
+	$labdoorq = ""
 	redirect_to root_path
 end
 
@@ -108,6 +110,7 @@ end
 def no
 	if $memory == "Do you take the paper?"
 		$paperq = false
+	 	flash[:paperno] = "You dropped the poor, sad, depressed little paper"
 	else
 		$qmessage = "Robot: What do you want it to be?"
 		$boss = ""
@@ -130,6 +133,9 @@ def one
 	if $memory == "or Two flip them the finger"
 		$fingerqq = "How rude!"
 	end
+	if $memory == "When you got to the labratory there were two doors Indifferent lab door 1 and Ecstatic lab door 2"
+		$labdoorq = "You go through the Indifferent door, nothing wants to happen"
+	end
 	redirect_to ({ action: 'next'})
 	
 end
@@ -137,6 +143,10 @@ def two
 	$acat = "Cats"
 	if $memory == "or Two flip them the finger"
 		$fingerq = "Ok"
+	end
+	if $memory == "When you got to the labratory there were two doors Indifferent lab door 1 and Ecstatic lab door 2"
+		$labdoorq = "You go through the extatic door, it was so extatic that you got slaped with happyness"
+		$yhealth = 9
 	end
 	redirect_to ({ action: 'next'})
 end
@@ -154,78 +164,16 @@ def rules
 	flash[:rules3] = "4)YOU CANT GO FURTHER UNLESS YOU ARE SMART ENOUGH TO SOLVE THIS PROBLEM, DO NOT TRY AND GO FURTHER"
 	redirect_to :back
 end
+def paper
+	flash[:paper] = "Hello, whoever you are, this is your lucky day"
+	flash[:paper1] = "YOU have been selected from millons of other beings to take part in our experement"
+	flash[:paper2] = "THIS experement that we speak of will transport you though dimentions"
+	flash[:paper3] = "You have been chosen because you have a very low pain tolerance"
+	flash[:paper4] = "This dimention experement was ment to be a better advil"
+	flash[:paper5] = "If you are interested come to the alleyway behind the next stop sign on route 1050+72/2244"
+	redirect_to :back
+end
 
-#  if @direction == "Right" or @direction == "right"
-# 	 "You decide to go RIGHT into a bully"
-#  elsif @direction == "Left" or @direction == "left"
-# 	 "You decide to go left but all thats LEFT was a bully"
-#  else
-# 	 "You decide to go RIGHT into a bully"
-#  end
-#  @ehealth = 11
-#  @yhealth = 10
-#  @ename = "Charles"
-
-#  "                    CAP.tain Charles THE BULLYcaps (4 short)"
-#  ""
-#  ""
-#  "Bully HP - 11 	Your HP - 10"
-#  ""
-#  ""
-#  ""
-#  ""
-#  ""
-#  ""
-#  ""
-# "Charles: I'm a nice bully so I will give you two choices"
-# "PUNCH"
-# "OR"
-# "punch"
-#  "---------------------------------------------------------------------------------"
-#  @punch = gets.chomp
-#  while @punch.empty? 
-# 	 "You need an answer"
-#  	@punch = gets.chomp
-#  end
-#  if @punch == "PUNCH"
-#  	damage(5)
-# 	 "It hurt your SOUL"
-#  	"Your HP - @yhealth"
-#  elsif @punch == "punch"
-#  	damage(1)
-# 	 "It wasn't BAD"
-#  	"Your HP - @yhealth"
-#  else
-# 	 "Charles: A PUNCH it is"
-#  	damage(5)
-# 	 "It hurt your SOUL"
-#  	"Your HP - @yhealth"
-#  end
-# "You get a feeling of DETERMINATION"
-# "You respond with either"
-#  "1. A punch 2. Run"
-#  "Answer 1 or 2"
-#  "---------------------------------------------------------------------------------"
-#  @returnpunch = gets.chomp
-#  while @returnpunch.empty? 
-# 	 "You need an answer"
-#  	@returnpunch = gets.chomp
-#  end
-#  if @returnpunch == "1"
-#  	"Charles returns with a PUNCH and you feel it TOO MUCH"
-#  	damage5)
-#  	"Your HP - @yhealth"
-#  elsif @returnpunch == "2"
-# 	 "You run away like a bitch"
-#  else
-# 	 "Your brain is confused by what you want to do it chose one"
-#  	@returnpunch == "1"
-#  end
-#  if @returnpunch == "1" and @yhealth != 0
-# 	 "You run away from the bully"
-#  end
-
-# "After your kurfuffle with charles you decide to find a companion because you have no friends"
 # "Then it hit you"
 # "A paper in the wind slaps your face that reads"
 # "Experement that needs test subjects that are willing to go to another dimention"
@@ -248,7 +196,7 @@ end
 # 	"You said NO BAD PAPER"
 # 	"You dropped the poor, sad, depressed little paper"
 #  end
-#  "When you got to the labratory there were two doors 1. Indifrent lab door 1 and 2. Extatic lab door 2"
+#  "When you got to the labratory there were two doors 1. Indifferent lab door 1 and 2. Ecstatic lab door 2"
 # "1 or 2"
 #  "---------------------------------------------------------------------------------"
 #  @labdoorq = gets.chomp

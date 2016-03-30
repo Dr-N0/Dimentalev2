@@ -1,6 +1,6 @@
 <!-- <h1 class="classname"></h1> -->
 <div class= "re" id="re">
-<%= form_tag("/re", method: "get") do %>
+	<%= form_tag("/re", method: "get") do %>
 		<%= submit_tag :Reset, :class => "re"%>
 <% end %>
 </div>
@@ -74,6 +74,19 @@
 			<br>
 			<br>
 	<% end %>		
+	<% if flash[:paper4] %>
+			<%= flash[:paper4] %>
+			<br>
+			<br>
+	<% end %>
+	<% if flash[:paper5] %>
+			<%= flash[:paper5] %>
+			<br>
+			<br>
+	<% end %>
+	<% if flash[:paperno] %>
+			<%= flash[:paperno] %>
+	<% end %>	
 	</div>
 </div>
 
@@ -134,7 +147,10 @@
  		</p>
  		<p>
  			<%= "So you do the only logical thing and punch her because she hindered your morals" %>
- 		</p> 	
+ 		</p>
+ 	<% end %>
+ 	<% if $memory == "          "%>
+ 		<%= $labdoorq %>
  	<% end %>
 </div>
 
@@ -171,6 +187,10 @@
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
 		<% elsif $memory == "Do you take the paper?" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
+		<% elsif $memory == "When you got to the labratory there were two doors Indifferent lab door 1 and Ecstatic lab door 2" %>
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
@@ -224,6 +244,14 @@
 				<% end %>
 		<% end %>
 		<% if $memory == "or Two flip them the finger" %>
+				<%= form_tag("/1", method: "post") do %>
+					<%=submit_tag :One, :class => "one"%>
+				<% end %>
+				<%= form_tag("/2", method: "post") do %>
+					<%=submit_tag :Two, :class => "two"%>
+				<% end %>
+		<% end %>
+		<% if $memory == "When you got to the labratory there were two doors Indifferent lab door 1 and Ecstatic lab door 2" %>
 				<%= form_tag("/1", method: "post") do %>
 					<%=submit_tag :One, :class => "one"%>
 				<% end %>
