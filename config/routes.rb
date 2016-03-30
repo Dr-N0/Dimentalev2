@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   get 'home_page/2', to: 'home_page#paper'
  
+  get 'home_page/gem', to: 'home_page#gem'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -59,7 +60,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  
+
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales

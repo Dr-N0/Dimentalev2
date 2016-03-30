@@ -91,7 +91,7 @@
 			<% if $memory == "As it spreads throughout your body your eyelids drop and you pass out and vanish" or $memory == "As you touch the portal you feel a tingle, it starts to go to your head, neck and shoulders" or $memory == "*boop*" %>
 				<img src="/assets/vortex.gif">
 			<% end %>
-			<% if $memory == "      " and $acats == "Cats" %>
+			<% if $memory == "      " and $acat == "Cats" %>
 				<img src="/assets/grandma.jpg">
 			<% end %>
 			<% if $memory == "      " and $adog == "Dogs" %>
@@ -163,6 +163,9 @@
  	<% if $memory == "          "%>
  		<%= $labdoorq %>
  	<% end %>
+ 	 <% if $memory == "            " %>
+ 		<%= $agraveyard %>
+ 	<% end %>
 </div>
 
 
@@ -205,6 +208,10 @@
 				<%form_tag("/next", method: "post") do %>
 				<%submit_tag :Next, :class => "next"%>
 				<% end %>
+		<% elsif $memory == "Give me paper" %>
+				<%form_tag("/next", method: "post") do %>
+				<%submit_tag :Next, :class => "next"%>
+				<% end %>
 		<%else%>
 			<%=form_tag("/next", method: "post") do %>
 				<%=submit_tag :Next, :class => "next"%>	
@@ -243,9 +250,23 @@
 					<%=submit_tag :No, :class => "no"%>
 				<% end %>
 		<% end %>
-
+		<% if $memory == "Give me paper" and $paperq == true %>
+			<%= form_tag("/yes", method: "post") do %>
+					<%=submit_tag :Yes, :class => "yes"%>
+				<% end %>
+			<%= form_tag("/no", method: "post") do %>
+					<%=submit_tag :No, :class => "no"%>
+				<% end %>
+		<% end %>
+		<% if $memory == "Give me paper" and $paperq == false %>
+			<%= form_tag("/no", method: "post") do %>
+					<%=submit_tag :No, :class => "no"%>
+				<% end %>
+		<% end %>
+	
 	<!-- VALIDATIONS FOR ONE OR TWO QUESTIONS -->
 				<!-- BELOW -->
+
 		<% if $memory == "Robot: Which do you like, 1)dogs or 2)cats" %>
 				<%= form_tag("/1", method: "post") do %>
 					<%=submit_tag :One, :class => "one"%>
